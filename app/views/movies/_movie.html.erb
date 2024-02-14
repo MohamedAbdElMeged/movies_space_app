@@ -1,0 +1,28 @@
+<div id="<%= dom_id movie %>">
+<dl>
+<dt>Name:</dt>
+<dd><%= movie.name %></dd>
+
+<dt>Description:</dt>
+<dd><%= movie.description %></dd>
+
+<dt>Year:</dt>
+<dd><%= movie.year %></dd>
+
+<dt>Filming Location:</dt>
+<dd><%= movie.filming_location %></dd>
+
+<dt>Country:</dt>
+<dd><%= movie.country %></dd>
+
+<dt>Director:</dt>
+<dd><%= movie.director %></dd>
+</dl>
+<dt>Actors:</dt>
+<% movie.actors.each do |actor| %>
+    <dd> <%= actor.name %> </dd>
+<%end%>
+</dl>
+</div>
+<br>
+<br>

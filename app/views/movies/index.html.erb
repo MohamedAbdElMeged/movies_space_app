@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<h4>Search:</h4>
+  <%= search_form_for @q do |f| %>
+  <%= f.label :actors %>
+  <%= f.search_field :movie_actors_actor_name_cont %>
+
+  <%= f.submit %>
+  <% end %>
+
+<div id="movies">
+  <% @movies.each do |movie| %>
+    <%= render movie %>
+    <p>
+      <%= link_to "Show this movie", movie %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New movie", new_movie_path %>
+
+
+<%= render 'imports/new', import_file: ImportFile.new %>

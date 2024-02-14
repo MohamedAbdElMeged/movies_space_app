@@ -1,0 +1,17 @@
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Import From CSV</h3>
+
+<%= form_for import_file ,html: { multipart: true }, url: import_path do |form| %>
+    <%= form.label :import_file_type %>
+    <%= form.select :import_file_type, ImportFile.import_file_types.keys %>
+    <%= form.label :file %>
+  <%= form.file_field :file %>
+  
+    <%= form.submit %>
+  <% end %>
